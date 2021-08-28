@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Barlow Semi Condensed', sans-serif;
+    background: var(--bg-color);
   }
 `
 export default GlobalStyles

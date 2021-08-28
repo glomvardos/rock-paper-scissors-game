@@ -38,18 +38,30 @@ const UserChoiceContainer = styled.div`
   box-shadow: var(--box-shadow);
   ${({ choice }) => choice === 'rock' && `border: 12px solid var(--rock);`}
   ${({ choice }) => choice === 'paper' && `border: 12px solid var(--paper);`}
-    ${({ choice }) => choice === 'scissor' && `border: 12px solid var(--scissors);`}
-    ${({ choice }) => choice === 'rock' && `bottom: -20%;`}
-    ${({ choice }) => choice === 'rock' && `left: 18%;`}
-    ${({ choice }) => choice === 'paper' && `left: -25%;`}
-    ${({ choice }) => choice === 'paper' && `top: -30%;`}
-    ${({ choice }) => choice === 'scissor' && `right: -25%;`}
-    ${({ choice }) => choice === 'scissor' && `top: -30%;`} @media (min-width: 900px) {
+  ${({ choice }) => choice === 'scissor' && `border: 12px solid var(--scissors);`}
+
+  ${({ choice }) => choice === 'rock' && `bottom: -20%;`}
+  ${({ choice }) => choice === 'rock' && `left: 18%;`}
+
+  ${({ choice }) => choice === 'paper' && `left: -25%;`}
+  ${({ choice }) => choice === 'paper' && `top: -30%;`}
+
+  ${({ choice }) => choice === 'scissor' && `right: -25%;`}
+  ${({ choice }) => choice === 'scissor' && `top: -30%;`} 
+  
+  @media (min-width: 900px) {
     width: 180px;
     height: 180px;
     ${({ choice }) => choice === 'rock' && `border: 20px solid var(--rock);`}
     ${({ choice }) => choice === 'paper' && `border: 20px solid var(--paper);`}
     ${({ choice }) => choice === 'scissor' && `border: 20px solid var(--scissors);`}
+  }
+
+  &:hover,
+  &:focus {
+    ${({ choice }) => choice === 'rock' && `box-shadow:0 0 .5rem .1rem var(--rock);`}
+    ${({ choice }) => choice === 'paper' && `box-shadow: 0 0 .5rem .1rem var(--paper);`}
+    ${({ choice }) => choice === 'scissor' && `box-shadow: 0 0 .5rem .1rem var(--scissors);`}
   }
 `
 
@@ -59,7 +71,6 @@ const ImgWrapper = styled.div`
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-
   img {
     width: 100%;
     height: 100%;

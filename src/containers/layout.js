@@ -12,7 +12,6 @@ const LayoutContainer = styled.main`
   flex-direction: column;
   justify-content: space-between;
   padding: 3rem;
-  background: var(--bg-color);
 
   @media (min-width: 900px) {
     padding: 4rem;
