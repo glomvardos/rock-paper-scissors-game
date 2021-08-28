@@ -4,7 +4,7 @@ const ScoreText = () => {
   return (
     <ScoreTextContainer>
       <p className='text'>Score</p>
-      <p className='score'>12</p>
+      <p className='score'>0</p>
     </ScoreTextContainer>
   )
 }

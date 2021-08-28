@@ -4,9 +4,9 @@ const GlobalStyles = createGlobalStyle`
   :root {
     /* Colors */
     /* Primary */
-    --scissors: linear-gradient(90deg, hsl(39, 89%, 49%) 0%, hsl(40, 84%, 53%) 100%);
-    --paper: linear-gradient(90deg, hsl(230, 89%, 62%) 0%,hsl(230, 89%, 65%) 100%);
-    --rock: linear-gradient(90deg, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%)100%);
+    --scissors: hsl(40, 84%, 53%);
+    --paper: hsl(230, 89%, 65%);
+    --rock: hsl(349, 70%, 56%);
     
     /* Neutral */
     --dark-text: hsl(229, 25%, 31%);
