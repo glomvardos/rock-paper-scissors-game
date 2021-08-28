@@ -19,6 +19,9 @@ const GlobalStyles = createGlobalStyle`
     /* Fonts */
     --font-semi-bold: 600;
     --font-bold: 700;
+
+    /* Box shadow */
+    --box-shadow: rgba(0, 0, 0, 0.19) 0 1rem 2rem, rgba(0, 0, 0, 0.23) 0 0.6rem 0.6rem;
   }
 
   * {

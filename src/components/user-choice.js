@@ -35,20 +35,16 @@ const UserChoiceContainer = styled.div`
   height: 120px;
   padding: 1rem;
   cursor: pointer;
+  box-shadow: var(--box-shadow);
   ${({ choice }) => choice === 'rock' && `border: 12px solid var(--rock);`}
   ${({ choice }) => choice === 'paper' && `border: 12px solid var(--paper);`}
-  ${({ choice }) => choice === 'scissor' && `border: 12px solid var(--scissors);`}
-
-  ${({ choice }) => choice === 'rock' && `bottom: -20%;`}
-  ${({ choice }) => choice === 'rock' && `left: 18%;`}
-
-  ${({ choice }) => choice === 'paper' && `left: -25%;`}
-  ${({ choice }) => choice === 'paper' && `top: -30%;`}
-
-  ${({ choice }) => choice === 'scissor' && `right: -25%;`}
-  ${({ choice }) => choice === 'scissor' && `top: -30%;`}
-
-  @media(min-width:900px) {
+    ${({ choice }) => choice === 'scissor' && `border: 12px solid var(--scissors);`}
+    ${({ choice }) => choice === 'rock' && `bottom: -20%;`}
+    ${({ choice }) => choice === 'rock' && `left: 18%;`}
+    ${({ choice }) => choice === 'paper' && `left: -25%;`}
+    ${({ choice }) => choice === 'paper' && `top: -30%;`}
+    ${({ choice }) => choice === 'scissor' && `right: -25%;`}
+    ${({ choice }) => choice === 'scissor' && `top: -30%;`} @media (min-width: 900px) {
     width: 180px;
     height: 180px;
     ${({ choice }) => choice === 'rock' && `border: 20px solid var(--rock);`}

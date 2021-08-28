@@ -18,9 +18,6 @@ const Game = () => {
 export default Game
 
 const GameContainer = styled.section`
-  position: relative;
-  top: 30%;
-  transform: translateY(-30%);
   display: flex;
   justify-content: center;
 `

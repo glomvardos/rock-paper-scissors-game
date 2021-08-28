@@ -17,6 +17,7 @@ const ScoreTextContainer = styled.div`
   background-color: #ffffff;
   border-radius: 0.8rem;
   text-align: center;
+  box-shadow: var(--box-shadow);
 
   .text {
     text-transform: uppercase;

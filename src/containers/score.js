@@ -27,6 +27,7 @@ const ScoreContainer = styled.header`
   padding: 1rem;
   border: 2px solid var(--header-outline);
   border-radius: 0.8rem;
+  box-shadow: var(--box-shadow);
 
   @media (min-width: 900px) {
     max-width: 750px;

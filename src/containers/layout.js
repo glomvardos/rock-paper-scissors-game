@@ -10,6 +10,7 @@ const LayoutContainer = styled.main`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 3rem;
   background: var(--bg-color);
 
