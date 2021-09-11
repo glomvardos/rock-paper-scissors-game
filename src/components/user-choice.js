@@ -59,7 +59,7 @@ const UserChoiceContainer = styled.div`
 
   &:hover,
   &:focus {
-    ${({ choice }) => choice === 'rock' && `box-shadow:0 0 .5rem .1rem var(--rock);`}
+    ${({ choice }) => choice === 'rock' && `box-shadow: 0 0 .5rem .1rem var(--rock);`}
     ${({ choice }) => choice === 'paper' && `box-shadow: 0 0 .5rem .1rem var(--paper);`}
     ${({ choice }) => choice === 'scissor' && `box-shadow: 0 0 .5rem .1rem var(--scissors);`}
   }

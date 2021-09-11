@@ -1,14 +1,21 @@
+import { useContext } from 'react'
 import Layout from './containers/layout'
 import Score from './containers/score'
 import Game from './containers/game'
 import Button from './components/button'
+import Rules from './components/rules'
+
+import { store } from './context/store'
 
 const App = () => {
+  const { showModal, showModalHandler } = useContext(store)
+
   return (
     <Layout>
+      {showModal && <Rules showModalHandler={showModalHandler} />}
       <Score />
       <Game />
-      <Button text='rules' />
+      <Button text='rules' onClick={showModalHandler} />
     </Layout>
   )
 }
