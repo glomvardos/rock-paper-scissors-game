@@ -4,7 +4,7 @@ const store = createContext()
 
 const StoreProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false)
-  const [showResult, setShowResult] = useState(true)
+  const [showResult, setShowResult] = useState(false)
 
   const showModalHandler = () => setShowModal(prevState => !prevState)
   const showResultHandler = () => setShowResult(prevResult => !prevResult)

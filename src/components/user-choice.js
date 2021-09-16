@@ -3,9 +3,9 @@ import rock from '../assets/icon-rock.svg'
 import paper from '../assets/icon-paper.svg'
 import scissor from '../assets/icon-scissors.svg'
 
-const UserChoice = ({ choice }) => {
+const UserChoice = ({ choice, position }) => {
   return (
-    <UserChoiceContainer choice={choice}>
+    <UserChoiceContainer position={position} choice={choice}>
       {choice === 'rock' && (
         <ImgWrapper>
           <img src={rock} alt='choice icon' />
@@ -28,7 +28,7 @@ const UserChoice = ({ choice }) => {
 export default UserChoice
 
 const UserChoiceContainer = styled.div`
-  position: absolute;
+  position: ${({ position }) => (position ? 'relative' : 'absolute')};
   background-color: #ffffff;
   border-radius: 50%;
   width: 120px;
@@ -40,14 +40,15 @@ const UserChoiceContainer = styled.div`
   ${({ choice }) => choice === 'paper' && `border: 12px solid var(--paper);`}
   ${({ choice }) => choice === 'scissor' && `border: 12px solid var(--scissors);`}
 
-  ${({ choice }) => choice === 'rock' && `bottom: -20%;`}
-  ${({ choice }) => choice === 'rock' && `left: 18%;`}
+  
+  ${({ choice, position }) => !position && choice === 'rock' && `bottom: -20%;`}
+  ${({ choice, position }) => !position && choice === 'rock' && `left: 18%;`}
 
-  ${({ choice }) => choice === 'paper' && `left: -25%;`}
-  ${({ choice }) => choice === 'paper' && `top: -30%;`}
+  ${({ choice, position }) => !position && choice === 'paper' && `left: -25%;`}
+  ${({ choice, position }) => !position && choice === 'paper' && `top: -30%;`}
 
-  ${({ choice }) => choice === 'scissor' && `right: -25%;`}
-  ${({ choice }) => choice === 'scissor' && `top: -30%;`} 
+  ${({ choice, position }) => !position && choice === 'scissor' && `right: -25%;`}
+  ${({ choice, position }) => !position && choice === 'scissor' && `top: -30%;`} 
   
   @media (min-width: 900px) {
     width: 180px;
