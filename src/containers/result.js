@@ -30,7 +30,7 @@ const Result = () => {
 export default Result
 
 const Container = styled.div`
-  margin-top: 50%;
+  margin-top: 30%;
   display: flex;
   justify-content: space-between;
   color: #ffffff;

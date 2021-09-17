@@ -5,13 +5,17 @@ import bgTriangle from '../assets/bg-triangle.svg'
 import { store } from '../context/store'
 
 const Game = () => {
-  const { setMyPick, setHousePick } = useContext(store)
+  const { setIsChoice, setMyPick, setHousePick } = useContext(store)
 
-  const choiceHandler = e => {
+  const choiceHandler = choice => {
     const houseChoice = ['rock', 'paper', 'scissor']
     const randomNum = Math.floor(Math.random() * 3)
-    setMyPick(e.target.alt)
-    setHousePick(houseChoice[randomNum])
+    setMyPick(choice)
+
+    setTimeout(() => {
+      setHousePick(houseChoice[randomNum])
+    }, 2000)
+    setIsChoice(true)
   }
 
   return (

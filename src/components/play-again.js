@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { store } from '../context/store'
 
 const PlayAgain = () => {
-  const { result } = useContext(store)
+  const { result, resetGameHandler } = useContext(store)
 
   return (
     <Container>
       <p>{result}</p>
-      <button>Play again</button>
+      <button onClick={resetGameHandler}>Play again</button>
     </Container>
   )
 }
@@ -41,6 +41,7 @@ const Container = styled.div`
     cursor: pointer;
     outline: none;
     transition: all 200ms ease-out;
+    box-shadow: var(--box-shadow);
 
     &:hover {
       color: var(--rock);

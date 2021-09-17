@@ -16,8 +16,6 @@ const StoreProvider = ({ children }) => {
   const decrementScoreHandler = () => setScore(prevScore => prevScore - 1)
 
   const gameStateHandler = useCallback(() => {
-    setIsChoice(true)
-
     // DRAW
     if (myPick === housePick) {
       setResult('draw')
@@ -46,6 +44,13 @@ const StoreProvider = ({ children }) => {
     }
   }, [gameStateHandler, housePick])
 
+  const resetGameHandler = () => {
+    setIsChoice(false)
+    setResult(null)
+    setMyPick(null)
+    setHousePick(null)
+  }
+
   const ctx = {
     showModal,
     isChoice,
@@ -55,8 +60,10 @@ const StoreProvider = ({ children }) => {
     result,
     setMyPick,
     setHousePick,
+    setIsChoice,
     showResultHandler,
     showModalHandler,
+    resetGameHandler,
   }
   return <store.Provider value={ctx}>{children}</store.Provider>
 }
