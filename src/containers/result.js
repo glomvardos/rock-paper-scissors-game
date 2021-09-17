@@ -1,19 +1,26 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+
 import UserChoice from '../components/user-choice'
+import { store } from '../context/store'
 
 const Result = () => {
+  const { myPick, housePick } = useContext(store)
+
   return (
     <Container>
       <LeftCol>
         <WrapperLeft>
-          <UserChoice position='relative' choice='rock' />
+          <UserChoice position='relative' choice={myPick} />
         </WrapperLeft>
         <h2>You Picked</h2>
       </LeftCol>
       <RightCol>
-        <WrapperRight>
-          <UserChoice position='relative' choice='paper' />
-        </WrapperRight>
+        {housePick && (
+          <WrapperRight>
+            <UserChoice position='relative' choice={housePick} />
+          </WrapperRight>
+        )}
         <h2>The House Picked</h2>
       </RightCol>
     </Container>
@@ -23,6 +30,7 @@ const Result = () => {
 export default Result
 
 const Container = styled.div`
+  margin-top: 50%;
   display: flex;
   justify-content: space-between;
   color: #ffffff;

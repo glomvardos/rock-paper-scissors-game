@@ -2,23 +2,32 @@ import styled from 'styled-components'
 import rock from '../assets/icon-rock.svg'
 import paper from '../assets/icon-paper.svg'
 import scissor from '../assets/icon-scissors.svg'
+import { store } from '../context/store'
+import { useContext } from 'react'
 
 const UserChoice = ({ choice, position }) => {
+  const { setMyPick, gameStateHandler } = useContext(store)
+
+  const choiceHandler = e => {
+    setMyPick(e.target.alt)
+    gameStateHandler()
+  }
+
   return (
     <UserChoiceContainer position={position} choice={choice}>
       {choice === 'rock' && (
         <ImgWrapper>
-          <img src={rock} alt='choice icon' />
+          <img onClick={choiceHandler} src={rock} alt='rock' />
         </ImgWrapper>
       )}
       {choice === 'paper' && (
         <ImgWrapper>
-          <img src={paper} alt='choice icon' />
+          <img onClick={choiceHandler} src={paper} alt='paper' />
         </ImgWrapper>
       )}
       {choice === 'scissor' && (
         <ImgWrapper>
-          <img src={scissor} alt='choice icon' />
+          <img onClick={choiceHandler} src={scissor} alt='scissor' />
         </ImgWrapper>
       )}
     </UserChoiceContainer>
