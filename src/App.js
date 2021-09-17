@@ -10,14 +10,14 @@ import PlayAgain from './components/play-again'
 import { store } from './context/store'
 
 const App = () => {
-  const { showResult, showModal, showModalHandler } = useContext(store)
+  const { isChoice, result, showModal, showModalHandler } = useContext(store)
 
   return (
     <Layout>
       {showModal && <Rules showModalHandler={showModalHandler} />}
       <Score />
-      {showResult ? <Result /> : <Game />}
-      <PlayAgain />
+      {isChoice ? <Result /> : <Game />}
+      {result && <PlayAgain />}
       <Button text='rules' onClick={showModalHandler} />
     </Layout>
   )

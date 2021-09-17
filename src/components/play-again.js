@@ -1,9 +1,13 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { store } from '../context/store'
 
 const PlayAgain = () => {
+  const { result } = useContext(store)
+
   return (
     <Container>
-      <p>You lose</p>
+      <p>{result}</p>
       <button>Play again</button>
     </Container>
   )

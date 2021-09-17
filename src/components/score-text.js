@@ -1,10 +1,13 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { store } from '../context/store'
 
 const ScoreText = () => {
+  const { score } = useContext(store)
   return (
     <ScoreTextContainer>
       <p className='text'>Score</p>
-      <p className='score'>0</p>
+      <p className='score'>{score}</p>
     </ScoreTextContainer>
   )
 }
