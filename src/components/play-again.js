@@ -36,6 +36,8 @@ const Container = styled.div`
 
   button {
     display: inline-block;
+    background-color: #fff;
+    color: var(--dark-text);
     width: 200px;
     font-size: 1.6rem;
     font-family: inherit;
