@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
+import PlayAgain from '../components/play-again'
 
 import UserChoice from '../components/user-choice'
 import { store } from '../context/store'
@@ -23,6 +24,8 @@ const Result = () => {
         )}
         <h2>The House Picked</h2>
       </RightCol>
+
+      <PlayAgain />
     </Container>
   )
 }
@@ -31,14 +34,33 @@ export default Result
 
 const Container = styled.div`
   margin-top: 30%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas:
+    'myPick housePick'
+    'button button';
+  row-gap: 8rem;
   color: #ffffff;
   text-transform: uppercase;
 
   h2 {
     font-size: 1.45rem;
     letter-spacing: 0.11rem;
+  }
+
+  @media (min-width: 500px) {
+    justify-content: space-around;
+  }
+
+  @media (min-width: 900px) {
+    margin-top: 0;
+    row-gap: 0;
+    grid-template-areas: 'myPick button housePick';
+    place-content: center;
+    column-gap: 5rem;
+    h2 {
+      font-size: 2.3rem;
+      letter-spacing: 0.11rem;
+    }
   }
 `
 const LeftCol = styled.div`
@@ -47,6 +69,7 @@ const LeftCol = styled.div`
   align-items: center;
   position: relative;
   margin-left: 2rem;
+  grid-area: myPick;
 
   &::before {
     content: '';
@@ -59,15 +82,34 @@ const LeftCol = styled.div`
     bottom: -50%;
     transform: translateY(-50%);
   }
+
+  @media (min-width: 900px) {
+    width: 200px;
+    height: 200px;
+    margin-left: 0;
+    h2 {
+      margin-top: -50px;
+    }
+
+    &::before {
+      width: 110px;
+      height: 110px;
+      bottom: 16%;
+      transform: translateY(0%);
+    }
+  }
 `
-const RightCol = styled(LeftCol)``
+const RightCol = styled(LeftCol)`
+  grid-area: housePick;
+`
 
 const WrapperLeft = styled.div`
   position: absolute;
   bottom: 35px;
+
+  @media (min-width: 900px) {
+    bottom: 0;
+  }
 `
 
-const WrapperRight = styled.div`
-  position: absolute;
-  bottom: 35px;
-`
+const WrapperRight = styled(WrapperLeft)``

@@ -5,7 +5,11 @@ import scissor from '../assets/icon-scissors.svg'
 
 const UserChoice = ({ choice, position, onClickHandler }) => {
   return (
-    <UserChoiceContainer onClick={() => onClickHandler(choice)} position={position} choice={choice}>
+    <UserChoiceContainer
+      onClick={onClickHandler ? () => onClickHandler(choice) : null}
+      position={position}
+      choice={choice}
+    >
       {choice === 'rock' && (
         <ImgWrapper>
           <img src={rock} alt='rock' />

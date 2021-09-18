@@ -6,8 +6,8 @@ const PlayAgain = () => {
   const { result, resetGameHandler } = useContext(store)
 
   return (
-    <Container>
-      <p>{result}</p>
+    <Container result={result}>
+      <p>{result ? result : 'text'}</p>
       <button onClick={resetGameHandler}>Play again</button>
     </Container>
   )
@@ -17,7 +17,13 @@ export default PlayAgain
 
 const Container = styled.div`
   margin: 0 auto;
+  grid-area: button;
+  visibility: ${({ result }) => (result ? 'visible' : 'hidden')};
 
+  @media (min-width: 900px) {
+    visibility: visible;
+    display: ${({ result }) => (result ? 'block' : 'none')};
+  }
   p {
     text-transform: uppercase;
     color: #fff;
