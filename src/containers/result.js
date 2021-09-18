@@ -87,6 +87,11 @@ const LeftCol = styled.div`
     width: 200px;
     height: 200px;
     margin-left: 0;
+
+    & img {
+      width: 120px;
+    }
+
     h2 {
       margin-top: -50px;
     }
