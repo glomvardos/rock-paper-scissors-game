@@ -35,6 +35,22 @@ export default Game
 const GameContainer = styled.section`
   display: flex;
   justify-content: center;
+  opacity: 0;
+  animation: game 1000ms ease-out forwards;
+
+  @keyframes game {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 `
 const ImgWrapper = styled.div`
   position: relative;

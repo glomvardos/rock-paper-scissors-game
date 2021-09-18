@@ -28,10 +28,23 @@ const ScoreContainer = styled.header`
   border: 2px solid var(--header-outline);
   border-radius: 0.8rem;
   box-shadow: var(--box-shadow);
+  opacity: 0;
+  animation: slidein 1200ms ease-out forwards;
 
   @media (min-width: 900px) {
     max-width: 750px;
     padding: 2rem;
+  }
+
+  @keyframes slidein {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 `
 

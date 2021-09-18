@@ -18,7 +18,7 @@ const StoreProvider = ({ children }) => {
   const gameStateHandler = useCallback(() => {
     // DRAW
     if (myPick === housePick) {
-      setResult('draw')
+      setResult('tie')
     }
 
     //WIN
