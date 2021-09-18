@@ -36,7 +36,7 @@ const GameContainer = styled.section`
   display: flex;
   justify-content: center;
   opacity: 0;
-  animation: game 1000ms ease-out forwards;
+  animation: game 1200ms ease-out forwards 500ms;
 
   @keyframes game {
     0% {
